@@ -5,10 +5,11 @@ app = Flask('')
 
 @app.route('/')
 def home():
+    print("Ping received!")  # كل مرة UptimeRobot يرسل Ping، يطبع في console
     return "Bot is alive!"
 
 def run():
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=5000)
 
 def keep_alive():
     t = Thread(target=run)
